@@ -11,7 +11,6 @@
 		<color rgba="1 1 1 1"/>
 	</material>
 
-
 	<xacro:property name="base_width" value="0.16"/>
 	<xacro:property name="base_length" value="0.16"/>
 	<xacro:property name="base_wheel_gap" value="0.007"/>
@@ -20,7 +19,12 @@
 	<xacro:property name="wheel_joint_offset" value="0.02"/>
 	<xacro:property name="caster_wheel_radius" value="${wheel_radius/2}"/>
 	<xacro:property name="caster_wheel_joint_offset" value="-0.052"/>
-
+	
+  <!--
+  ==============================================================================
+	Robot base 
+  ==============================================================================
+	-->
 
 	<xacro:macro name="box_inertia" params="m w h d">
 		<inertial>
@@ -66,6 +70,11 @@
 		<child link="base_link"/>
 	</joint>
 	
+	<!--
+	===============================================================================
+	Left and right wheels
+	===============================================================================
+	-->
 	<xacro:macro name="cylinder_inertial" params="m r h">
 		<inertial>
 			<mass value="${m}"/>
@@ -108,6 +117,11 @@
 	<xacro:wheel prefix="left" reflect="1"/>
 	<xacro:wheel prefix="right" reflect="-1"/>
 	
+	<!--
+	===============================================================================
+	Caster wheel
+	===============================================================================
+	-->
 	<xacro:macro name="sphere_inertia" params="m r">
 		<inertial>
 			<mass value="${m}"/>
