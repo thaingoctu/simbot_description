@@ -158,4 +158,11 @@
 		<parent link="base_link"/>
 		<child link="caster_wheel"/>
 	</joint>
+	
+	<!--
+	===============================================================================
+	Gazebo plugins
+	===============================================================================
+	-->
+	<xacro:include filename="$(find simbot_description)/urdf/simbot_gazebo_plugins.xacro"/>
 </robot>
